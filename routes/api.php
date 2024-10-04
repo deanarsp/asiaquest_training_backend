@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ItemController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('items',function (Request $request) {
+    return 'Product Retrieval API';
+});
+
+Route::get('items', [ItemController::class, 'index']);
